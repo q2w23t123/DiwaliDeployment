@@ -55,7 +55,7 @@ const BusinessLounge = () => {
                         <img
                             key={index}
                             src={img}
-                            alt={`Lounge image ${index + 1}`}
+                            alt={`Business Lounge ${index + 1}`}
                             className="lounge-image"
                             onClick={() => openModal(img)}
                         />
