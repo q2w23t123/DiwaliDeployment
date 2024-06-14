@@ -20,19 +20,22 @@ jobs:
 
       - name: Install dependencies and build frontend
         run: |
+          cd react
           npm install
           npm run build
         working-directory: react
 
       - name: Zip frontend artifact
-        run: zip -r react.zip ./*
+        run: |
+          cd react/build
+          zip -r react.zip .
         working-directory: react/build
 
       - name: Upload frontend artifact
         uses: actions/upload-artifact@v3
         with:
           name: react-artifact
-          path: react.zip
+          path: react/build/react.zip
 
       - name: Set up Python environment
         uses: actions/setup-python@v4
@@ -96,5 +99,6 @@ jobs:
           AZURE_WEBAPP_NAME: ${{ secrets.AZURE_WEBAPP_NAME }}
           AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
           AZURE_APP_SERVICE_PLAN: ${{ secrets.AZURE_APP_SERVICE_PLAN }}
+
 
 
