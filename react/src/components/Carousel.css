@@ -1,0 +1,21 @@
+.carousel-slide {
+    position: relative; /* Establishes a positioning context for absolute positioning */
+    height: 900px; /* Fixed height for each slide */
+    overflow: hidden; /* Ensures that anything outside of this box is not shown */
+}
+
+.carousel-image {
+    position: absolute;
+    bottom: 0; /* Aligns the bottom of the image with the bottom of the container */
+    left: 0; /* Aligns the image to the left of the container */
+    width: 100%; /* Ensures the image covers the full width of the container */
+    min-height: 100%; /* Ensures the image covers at least the full height of the container */
+    object-fit: cover; /* Covers the area of the container without distorting aspect ratio */
+}
+
+.carousel-container {
+    overflow: hidden; /* Hide overflow */
+}
+.slick-dots {
+    bottom: 10px; /* Adjust so dots are within the padded area */
+  }

@@ -1,0 +1,52 @@
+/* src/components/Loading.css */
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fd3131;
+    z-index: 9999;
+}
+
+.loading-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 20px);
+    grid-template-rows: repeat(4, 20px);
+    gap: 5px;
+}
+
+.loading-square {
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    animation: fade 1.2s infinite ease-in-out both;
+    border-radius: 10px;
+}
+
+.loading-square:nth-child(1) { animation-delay: 0s; }
+.loading-square:nth-child(2) { animation-delay: 0.1s; }
+.loading-square:nth-child(3) { animation-delay: 0.2s; }
+.loading-square:nth-child(4) { animation-delay: 0.3s; }
+.loading-square:nth-child(5) { animation-delay: 0.1s; }
+.loading-square:nth-child(6) { animation-delay: 0.2s; }
+.loading-square:nth-child(7) { animation-delay: 0.3s; }
+.loading-square:nth-child(8) { animation-delay: 0.4s; }
+.loading-square:nth-child(9) { animation-delay: 0.2s; }
+.loading-square:nth-child(10) { animation-delay: 0.3s; }
+.loading-square:nth-child(11) { animation-delay: 0.4s; }
+.loading-square:nth-child(12) { animation-delay: 0.5s; }
+.loading-square:nth-child(13) { animation-delay: 0.3s; }
+.loading-square:nth-child(14) { animation-delay: 0.4s; }
+.loading-square:nth-child(15) { animation-delay: 0.5s; }
+.loading-square:nth-child(16) { animation-delay: 0.6s; }
+
+@keyframes fade {
+    0%, 39%, 100% { opacity: 0.3; }
+    40% { opacity: 1; }
+    0%, 100% { transform: translateY(10px); opacity: 0.3; }
+    50% { transform: translateY(-10px); opacity: 1; }
+}

@@ -1,0 +1,9 @@
+fieldset .add-row, fieldset .delete
+{
+	display: none !important;
+}
+
+.inlinechangelink
+{
+	display: block !important;
+}

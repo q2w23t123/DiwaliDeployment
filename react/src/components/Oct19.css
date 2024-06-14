@@ -1,0 +1,172 @@
+.oct19-page {
+    background-image: url(temp_background.png);
+    background-attachment: fixed;
+    width: 100%;
+    margin-top: 85px;
+}
+
+.title-breadcrumb-container {
+    padding: 30px 0;
+    text-align: center;
+}
+
+.oct19-title {
+    color: #ffffff;
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.oct19-page-background {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+}
+
+.activities-section, .food-court-section, .schedule-section {
+    position: relative;
+    background: white;
+    padding-top: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
+}
+
+.activities-section h2, .food-court-section h2, .schedule-section h2 {
+    font-size: 2em;
+    text-align: left;
+    margin-bottom: 20px;
+    color: #000000;
+    padding-left: 20px;
+}
+
+.activities-grid, .food-court-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.activity-item, .food-court-item {
+    text-align: center;
+}
+
+.activity-image, .food-court-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.activity-item h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #000000;
+}
+
+.food-court-item h3 {
+    margin-top: 10px;
+    font-size: 1.7em;
+    color: #000000;
+}
+
+.food-court-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.food-court-item p {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #484343;
+    padding: 0 20px;
+}
+
+.schedule-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(to right, #ff7e00, #ff1a1a);
+    border-radius: 10px;
+    margin: 0 20px;
+}
+
+.schedule-item {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.schedule-date {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #e41732;
+    margin-bottom: 10px;
+}
+
+.schedule-description {
+    font-size: 1em;
+    color: #000000;
+}
+
+@media (max-width: 768px) {
+    .oct19-title {
+        font-size: 2.5rem;
+    }
+
+    .activities-section, .food-court-section, .schedule-section {
+        margin-top: 20px;
+        max-width: 100%;
+
+    }
+
+    .activities-section h2, .food-court-section h2, .schedule-section h2 {
+        font-size: 2em;
+        text-align: center;
+        margin-bottom: 15px;
+        padding-left: 0;
+    }
+
+    .activities-grid, .food-court-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .activity-item, .food-court-item {
+        margin-bottom: 20px;
+    }
+
+    .activity-image, .food-court-image {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .activity-item h3, .food-court-item h3 {
+        font-size: 1.2em;
+    }
+
+    .food-court-item p {
+        font-size: 1em;
+        padding: 0 10px;
+    }
+
+    .schedule-container {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .schedule-item {
+        padding: 15px;
+    }
+
+    .schedule-date {
+        font-size: 1.2em;
+    }
+
+    .schedule-description {
+        font-size: 0.9em;
+    }
+}
