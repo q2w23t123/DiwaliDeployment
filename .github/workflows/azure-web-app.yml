@@ -47,12 +47,12 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
-          pip install -r diwali/requirements.txt
-        working-directory: diwali
+          pip install -r requirements.txt
+        working-directory: diwali/diwali
 
       - name: Zip backend artifact
         run: zip -r diwali.zip ./*
-        working-directory: diwali
+        working-directory: diwali/diwali
 
       - name: Upload backend artifact
         uses: actions/upload-artifact@v3
@@ -100,3 +100,4 @@ jobs:
           AZURE_WEBAPP_NAME: ${{ secrets.AZURE_WEBAPP_NAME }}
           AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
           AZURE_APP_SERVICE_PLAN: ${{ secrets.AZURE_APP_SERVICE_PLAN }}
+
