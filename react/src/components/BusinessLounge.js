@@ -21,15 +21,15 @@ const BusinessLounge = () => {
     };
 
     const nextImage = () => {
-        const index = images.indexOf(currentImage);
-        const nextIndex = (index + 1) % images.length;
-        setCurrentImage(images[nextIndex]);
+        const index = BusinessLoungeImages.indexOf(currentImage);
+        const nextIndex = (index + 1) % BusinessLoungeImages.length;
+        setCurrentImage(BusinessLoungeImages[nextIndex]);
     };
 
     const previousImage = () => {
-        const index = images.indexOf(currentImage);
-        const prevIndex = (index - 1 + images.length) % images.length;
-        setCurrentImage(images[prevIndex]);
+        const index = BusinessLoungeImages.indexOf(currentImage);
+        const prevIndex = (index - 1 + BusinessLoungeImages.length) % BusinessLoungeImages.length;
+        setCurrentImage(BusinessLoungeImages[prevIndex]);
     };
     return (
         <div className="business-lounge-page">
