@@ -5,7 +5,7 @@ const BusinessLounge = () => {
     const [modalOpen, setModalOpen] = useState(false);
     const [currentImage, setCurrentImage] = useState(null);
 
-    const images = [
+    const BusinessLoungeImages = [
         "bl_1.png", "bl_2.png", "bl_3.png", "bl_4.png",
         "bl_5.png", "bl_6.png", "bl_7.png", "bl_8.png",
         "bl_9.png", "bl_10.png", "bl_11.png", "bl_12.png"
@@ -51,7 +51,7 @@ const BusinessLounge = () => {
 
             <section className="image-lounge">
                 <div className="lounge-grid">
-                    {images.map((img, index) => (
+                    {BusinessLoungeImages.map((img, index) => (
                         <img
                             key={index}
                             src={img}
