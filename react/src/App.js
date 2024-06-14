@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation, useNavigationType } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigationType } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import NavigationBar from './components/NavigationBar';
 import AboutUs from './components/AboutUs';

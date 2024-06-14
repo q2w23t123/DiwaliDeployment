@@ -1,8 +1,8 @@
 // src/api/gemini.js
 const {
     GoogleGenerativeAI,
-    HarmCategory,
-    HarmBlockThreshold,
+    // HarmCategory,
+    // HarmBlockThreshold,
 } = require("@google/generative-ai");
 
 const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;

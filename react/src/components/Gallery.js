@@ -7,7 +7,7 @@ import diwali2023 from './diwali_2023.png';
 import diwali2022 from './diwali_2022.png';
 
 const Gallery = () => {
-    const [images, setImages] = useState([
+    const [images] = useState([
         { src: diwali2024, alt: "Melbourne Diwali 2024", title: "Melbourne Diwali 2024", link: "/gallery/2024" },
         { src: diwali2023, alt: "Melbourne Diwali 2023", title: "Melbourne Diwali 2023", link: "/gallery/2023" },
         { src: diwali2022, alt: "Melbourne Diwali 2022", title: "Melbourne Diwali 2022", link: "/gallery/2022" },

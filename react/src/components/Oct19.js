@@ -1,6 +1,5 @@
 import React from 'react';
 import './Oct19.css';
-import { useNavigate } from 'react-router-dom';
 
 const activities = [
     { title: "Clothes Stall", image: "/ClothesStall.png" },
@@ -12,7 +11,6 @@ const activities = [
 ];
 
 const Oct19 = () => {
-    const navigate = useNavigate();
 
     return (
         <div className="oct19-page">
