@@ -24,9 +24,16 @@ jobs:
           npm run build
         working-directory: react
 
+      - name: Verify frontend build
+        run: ls -alh react/build
+
       - name: Zip frontend artifact
         run: |
           zip -r react.zip .
+        working-directory: react/build
+
+      - name: Verify frontend zip
+        run: ls -alh react.zip
         working-directory: react/build
 
       - name: Upload frontend artifact
@@ -47,9 +54,16 @@ jobs:
           pip install -r requirements.txt
         working-directory: diwali
 
+      - name: Verify backend build
+        run: ls -alh diwali
+
       - name: Zip backend artifact
         run: |
           zip -r diwali.zip .
+        working-directory: diwali
+
+      - name: Verify backend zip
+        run: ls -alh diwali.zip
         working-directory: diwali
 
       - name: Upload backend artifact
@@ -98,7 +112,3 @@ jobs:
           AZURE_WEBAPP_NAME: ${{ secrets.AZURE_WEBAPP_NAME }}
           AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
           AZURE_APP_SERVICE_PLAN: ${{ secrets.AZURE_APP_SERVICE_PLAN }}
-
-
-
-
