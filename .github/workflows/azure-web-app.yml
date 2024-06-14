@@ -70,7 +70,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: diwali-artifact
-          path: diwali.zip
+          path: diwali/diwali.zip
 
   deploy:
     runs-on: ubuntu-latest
