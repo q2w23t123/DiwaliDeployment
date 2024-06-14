@@ -48,7 +48,8 @@ jobs:
         working-directory: diwali
 
       - name: Zip backend artifact
-        run: zip -r diwali.zip ./*
+        run: |
+          zip -r diwali.zip .
         working-directory: diwali
 
       - name: Upload backend artifact
@@ -97,6 +98,7 @@ jobs:
           AZURE_WEBAPP_NAME: ${{ secrets.AZURE_WEBAPP_NAME }}
           AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
           AZURE_APP_SERVICE_PLAN: ${{ secrets.AZURE_APP_SERVICE_PLAN }}
+
 
 
 
