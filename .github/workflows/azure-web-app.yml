@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: react-artifact
-          path: react/build/react.zip
+          path: react.zip
 
       - name: Set up Python environment
         uses: actions/setup-python@v4
@@ -44,17 +44,17 @@ jobs:
           python -m venv venv
           source venv/bin/activate
           pip install -r requirements.txt
-        working-directory: diwali
+        working-directory: diwali/diwali
 
       - name: Zip backend artifact
         run: zip -r diwali.zip ./*
-        working-directory: diwali
+        working-directory: diwali/diwali
 
       - name: Upload backend artifact
         uses: actions/upload-artifact@v3
         with:
           name: diwali-artifact
-          path: diwali/diwali.zip
+          path: diwali.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -91,8 +91,9 @@ jobs:
 
       - name: Deploy backend to Azure
         run: |
-          az webapp up --name ${{ secrets.AZURE_WEBAPP_NAME }} --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --plan ${{ secrets.AZURE_APP_SERVICE_PLAN }}
+          az webapp deployment source config-zip --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --name ${{ secrets.AZURE_WEBAPP_NAME }} --src diwali.zip
         env:
           AZURE_WEBAPP_NAME: ${{ secrets.AZURE_WEBAPP_NAME }}
           AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
           AZURE_APP_SERVICE_PLAN: ${{ secrets.AZURE_APP_SERVICE_PLAN }}
+          AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
