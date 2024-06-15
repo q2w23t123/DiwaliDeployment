@@ -24,16 +24,6 @@ jobs:
           npm run build
         working-directory: react
 
-      - name: Zip frontend artifact
-        run: zip -r react.zip ./*
-        working-directory: react/build
-
-      - name: Upload frontend artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: react-artifact
-          path: react/build/react.zip
-
       - name: Set up Python environment
         uses: actions/setup-python@v4
         with:
@@ -46,52 +36,45 @@ jobs:
           pip install -r requirements.txt
         working-directory: diwali
 
-      - name: Zip backend artifact
-        run: zip -r diwali.zip ./*
-        working-directory: diwali
+      - name: Combine frontend and backend builds
+        run: |
+          mkdir combined
+          cp -r react/build/* combined/
+          cp -r diwali/* combined/
+          cp -r diwali/venv combined/venv
 
-      - name: Upload backend artifact
+      - name: Zip combined artifact
+        run: zip -r combined.zip ./*
+        working-directory: combined
+
+      - name: Upload combined artifact
         uses: actions/upload-artifact@v3
         with:
-          name: diwali-artifact
-          path: diwali/diwali.zip
+          name: combined-artifact
+          path: combined.zip
 
   deploy:
     runs-on: ubuntu-latest
     needs: build-and-deploy
 
     steps:
-      - name: Download frontend artifact
+      - name: Download combined artifact
         uses: actions/download-artifact@v3
         with:
-          name: react-artifact
+          name: combined-artifact
 
-      - name: Download backend artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: diwali-artifact
-
-      - name: Unzip frontend artifact
-        run: unzip react.zip -d ./react
-
-      - name: Unzip backend artifact
-        run: unzip diwali.zip -d ./diwali
+      - name: Unzip combined artifact
+        run: unzip combined.zip -d ./combined
 
       - name: Azure login
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Deploy frontend to Azure Web App
+      - name: Deploy combined to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
           slot-name: 'production'
-          package: ./react
+          package: ./combined
 
-      - name: Deploy backend to Azure Web App
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
-          slot-name: 'production'
-          package: ./diwali
