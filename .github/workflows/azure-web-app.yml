@@ -72,10 +72,10 @@ jobs:
           name: diwali-artifact
 
       - name: Unzip frontend artifact
-        run: unzip react.zip -d ./frontend
+        run: unzip react.zip -d ./react
 
       - name: Unzip backend artifact
-        run: unzip diwali.zip -d ./backend
+        run: unzip diwali.zip -d ./diwali
 
       - name: Azure login
         uses: azure/login@v1
