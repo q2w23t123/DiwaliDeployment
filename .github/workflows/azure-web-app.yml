@@ -21,6 +21,8 @@ jobs:
       - name: Install dependencies and build frontend
         run: |
           npm install
+          npm install @google/generative-ai 
+          npm install scroll-into-view 
           npm run build
         working-directory: react
 
@@ -91,9 +93,5 @@ jobs:
 
       - name: Deploy backend to Azure
         run: |
-          az webapp deployment source config-zip --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --name ${{ secrets.AZURE_WEBAPP_NAME }} --src diwali.zip
-        env:
-          AZURE_WEBAPP_NAME: ${{ secrets.AZURE_WEBAPP_NAME }}
-          AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
-          AZURE_APP_SERVICE_PLAN: ${{ secrets.AZURE_APP_SERVICE_PLAN }}
-          AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+           az webapp deploy --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --name ${{ secrets.AZURE_WEBAPP_NAME }} --src-path diwali.zip --type zip
+           
