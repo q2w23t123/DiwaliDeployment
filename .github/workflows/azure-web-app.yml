@@ -93,5 +93,5 @@ jobs:
 
       - name: Deploy backend to Azure
         run: |
-           az webapp deploy --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --name ${{ secrets.AZURE_WEBAPP_NAME }} --src-path diwali.zip --type zip
+           az webapp deploy source config-zip --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --name ${{ secrets.AZURE_WEBAPP_NAME }} --src diwali.zip
            
