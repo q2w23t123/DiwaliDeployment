@@ -36,28 +36,6 @@ jobs:
           name: react-artifact
           path: react/build/react.zip
 
-      - name: Set up Python environment
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-
-      - name: Install dependencies and build backend
-        run: |
-          python -m venv venv
-          source venv/bin/activate
-          pip install -r requirements.txt
-        working-directory: diwali
-
-      - name: Zip backend artifact
-        run: zip -r diwali.zip ./*
-        working-directory: diwali
-
-      - name: Upload backend artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: diwali-artifact
-          path: diwali/diwali.zip
-
   deploy:
     runs-on: ubuntu-latest
     needs: build-and-deploy
@@ -68,16 +46,8 @@ jobs:
         with:
           name: react-artifact
 
-      - name: Download backend artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: diwali-artifact
-
       - name: Unzip frontend artifact
         run: unzip react.zip -d react
-
-      - name: Unzip backend artifact
-        run: unzip diwali.zip -d diwali
 
       - name: Azure login
         uses: azure/login@v1
