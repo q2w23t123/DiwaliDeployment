@@ -20,7 +20,7 @@ jobs:
 
       - name: Install dependencies and build frontend
         run: |
-          npm install
+          npm install @google/generative-ai scroll-into-view
           npm run build
         working-directory: react
 
@@ -72,10 +72,10 @@ jobs:
           name: diwali-artifact
 
       - name: Unzip frontend artifact
-        run: unzip react.zip -d react
+        run: unzip react.zip -d ./frontend
 
       - name: Unzip backend artifact
-        run: unzip diwali.zip -d diwali
+        run: unzip diwali.zip -d ./backend
 
       - name: Azure login
         uses: azure/login@v1
@@ -91,4 +91,5 @@ jobs:
 
       - name: Deploy backend to Azure
         run: |
-          az webapp deployment source config-zip --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --name ${{ secrets.AZURE_WEBAPP_NAME }} --src diwali.zip
+          az webapp deployment source config-zip --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --name ${{ secrets.AZURE_WEBAPP_NAME }} --src-path diwali/diwali.zip
+
