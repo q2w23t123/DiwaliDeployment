@@ -1,4 +1,0 @@
-{
-    "appService.defaultWebAppToDeploy": "undefined/subscriptions/2f630f66-7c8e-481a-aeca-c1e36d7c26db/resourceGroups/Diwali/providers/Microsoft.Web/sites/DiwaliTest",
-    "appService.deploySubpath": "."
-}

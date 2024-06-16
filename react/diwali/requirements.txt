@@ -1,3 +1,0 @@
-Django==4.2
-google-generativeai==0.1.0
-django-admin-sortable==2.2
