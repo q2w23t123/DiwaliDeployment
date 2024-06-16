@@ -1,0 +1,101 @@
+.event-details-page {
+    background-image: url(temp_background.png);
+    background-attachment: fixed;
+    width: 100%;
+    margin-top: 85px;
+}
+
+.title-breadcrumb-container {
+    padding: 30px 0;
+    text-align: center;
+}
+
+.event-detail-title {
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+
+.event-details {
+    text-align: center; /* Center the text */
+    padding: 50px 0; /* Add some padding above and below the content */
+    background-color: white;
+    color: #333; /* Dark grey text color */
+    margin-bottom: -50px;
+}
+
+.event-content h2 {
+    font-size: 2.5em; /* Large font size for the title */
+    margin-bottom: 0.5em; /* Space below the title */
+}
+
+.event-content h3 {
+    font-size: 2em; /* Large font size for the location name */
+    margin-bottom: 0.25em; /* Space below the location name */
+}
+
+.event-content p {
+    font-size: 1.5em; /* Large font size for the date */
+    margin-bottom: 1em; /* Space below the date */
+}
+
+.learn-more-btn {
+    background-color: #e41732; /* Button background color */
+    border: none;
+    padding: 15px 30px;
+    color: white;
+
+    font-weight: bold;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Transition for button hover effect */
+}
+
+.learn-more-btn:hover {
+    background-color: #e4843b; /* Darker background color on hover */
+}
+
+.event-image-container {
+    display: block; /* Adjust if you need to center this container */
+    overflow: hidden; /* Prevents the scaled image from overflowing */
+    max-width: 1200px; /* Adjust this to the maximum width you desire */
+    width: 100%; /* Makes the container responsive */
+    /* center the container if you use display: block; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.event-image {
+    display: block; /* Use block to prevent extra space below the image */
+    width: 100%; /* Ensures the image fills the container */
+    max-height: 700px; /* Set a max-height for your image */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for transform effect */
+    object-fit: cover; /* Cover ensures that the image will fill the height and width */
+}
+
+.event-image-container:hover .event-image {
+    transform: scale(1.1); /* Scales the image by 10% on hover */
+}
+
+@media (max-width: 768px) {
+    .event-detail-title {
+        font-size: 2.5rem;
+    }
+
+    .event-image-container {
+        margin-left: auto; /* Center container */
+        margin-right: auto; /* Center container */
+    }
+
+    .event-image {
+        max-width: 100%; /* Full width for smaller screens */
+        margin-left: auto; /* Center container */
+        margin-right: auto; /* Center container */
+    }
+    .learn-more-btn {
+        margin-bottom: 20px;
+    }
+}

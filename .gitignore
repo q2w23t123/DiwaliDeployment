@@ -1,2 +1,2 @@
-/react/node_modules
-/diwali/myenv
+node_modules/
+build/

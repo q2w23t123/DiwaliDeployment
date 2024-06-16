@@ -1,0 +1,163 @@
+
+.about-us-page {
+    background-image: url(temp_background.png);
+    background-attachment: fixed;
+    width: 100%;
+    margin-top: 85px;
+}
+
+.title-breadcrumb-container {
+    padding: 30px 0;
+    text-align: center;
+}
+
+.about-us-title {
+    color: white;
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumb {
+    color: white;
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+.breadcrumb a {
+    color: #ff7e5f;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+
+.navigation-bar a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.content-section {
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.history-section-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 50px;
+    margin-top: 80px;
+}
+
+
+.history-section {
+    margin-bottom: 50px;
+    flex-basis: 47%;
+    margin-left: 3%;
+}
+
+.history-section h1 {
+    font-size: 49px;
+
+}
+
+.history-section p {
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.history-img {
+    flex-basis: 47%;
+    margin-right: 3%;
+    width:900px;
+    height: 700px;
+
+}
+
+.saras-care-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    padding: 0 50px;
+}
+
+.saras-care-text {
+    margin-bottom: 350px;
+    margin-right: 3%;
+    flex-basis: 47%;
+}
+
+.saras-care-text h1 {
+    font-size: 49px;
+}
+
+.saras-care-text p {
+    font-size: 19px;
+    font-weight: 500;
+}
+.saras-care-img {
+    flex-basis: 47%;
+    margin-left: 3%;
+    width:900px;
+    height: 700px;
+}
+.underline {
+    width: 60px;
+    height: 4px;
+    background-color: red;
+}
+
+
+@media (max-width: 768px) {
+    .about-us-title {
+        font-size: 2.5rem;
+    }
+    .content-section,
+    .history-section-container,
+    .saras-care-container {
+        flex-direction: column;
+        padding: 0 20px;
+        margin-bottom: 20px;
+    }
+
+    .history-section,
+    .saras-care-text {
+        flex-basis: auto;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    .history-section h1,
+    .saras-care-text h1 {
+        font-size: 2rem;
+    }
+
+    .history-section p,
+    .saras-care-text p {
+        font-size: 1rem;
+    }
+
+    .history-img,
+    .saras-care-img {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .underline {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+
